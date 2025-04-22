@@ -1,0 +1,142 @@
+<!doctypehtml><html lang=en><meta charset=UTF-8><meta content="IE=edge"http-equiv=X-UA-Compatible><meta content="width=device-width,initial-scale=1"name=viewport><title>Online Food Delivery Website</title><link href=img/favicon.ico rel="shortcut icon"type=image/x-icon><link rel="manifest" href="manifest.json"><meta name="theme-color" content="#ff6b81"><link href=css/font-awesome/css/font-awesome.css rel=stylesheet><link rel="prefetch" href="css/hover-min.css" as="style"> <link href=css/style.css rel=stylesheet>
+<style>
+  #offline-indicator {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ff6b81;
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    z-index: 9999;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    animation: fadeIn 0.3s;
+    max-width: 320px;
+    text-align: left;
+  }
+  .offline-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .offline-icon {
+    font-size: 18px;
+    margin-right: 10px;
+  }
+  .offline-title {
+    font-size: 16px;
+  }
+  .offline-message {
+    font-size: 14px;
+    font-weight: normal;
+    opacity: 0.9;
+    margin-bottom: 10px;
+  }
+  .offline-button {
+    background: white;
+    color: #ff6b81;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: bold;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes pulse {
+    0% { opacity: 0.7; }
+    50% { opacity: 1; }
+    100% { opacity: 0.7; }
+  }
+  
+  /* Modify navigation menu for offline mode */
+  .offline-mode .login-link,
+  .offline-mode .register-link {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+  
+  .offline-badge {
+    display: none;
+    background: #ff6b81;
+    color: white;
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 10px;
+    margin-left: 5px;
+    animation: pulse 1.5s infinite;
+  }
+  
+  .offline-mode .offline-badge {
+    display: inline-block;
+  }
+</style>
+<header class=navbar><nav class="navbar-fixed-top navbar-menu"id=site-top-nav><div class=container><div class=logo><a href=index.html title=Logo><img src=img/logo.webp width="200" height="100" width="200" height="100" alt=Logo class=img-responsive></a></div><div class="menu text-right"><ul><li><a href=index.html class=hvr-underline-from-center>Home</a><li><a href=categories.html class=hvr-underline-from-center>Categories</a><li><a href=foods.html class=hvr-underline-from-center>Foods</a><li><a href=order.html class=hvr-underline-from-center>Order</a><li><a href=contact.html class=hvr-underline-from-center>Contact</a><li class="login-item"><a href=login.html class="hvr-underline-from-center login-link">Login <span class="offline-badge">Offline Only</span></a><li class="register-item"><a href=register.html class="hvr-underline-from-center register-link">Register <span class="offline-badge">Offline Only</span></a><li><a href=order.html class=shopping-cart id=shopping-cart><i class="fa fa-cart-arrow-down"></i></a></ul></div></div></nav></header><section class="text-center food-search"><div class=container><form action=food-search.html><input type=search placeholder="Search for food..."required> <input type=submit value=Search class=btn-primary></form></div></section><section class=categories><div class=container><h2 class=text-center>Explore Foods</h2><div class=heading-border></div><div class=grid-3><a href=category-foods.html><div class=float-container><img src=img/category/pizza.webp alt=""class=img-responsive><h3 class="float-text text-white">Pizza</h3></div></a><a href=category-foods.html><div class=float-container><img src=img/category/sandwich.webp alt=""class=img-responsive><h3 class="float-text text-white">Sandwich</h3></div></a><a href=category-foods.html><div class=float-container><img src=img/category/burger.webp alt=""class=img-responsive><h3 class="float-text text-white">Burger</h3></div></a></div></div></section><section class=food-menu><div class=container><h2 class=text-center>Food Menu</h2><div class=heading-border></div><div class=grid-2><div class=food-menu-box><form action=""><div class=food-menu-img><img src=img/food/p1.webp alt=""class="img-responsive img-curve"></div><div class=food-menu-desc><h4>Margherita Pizza</h4><p class=food-price>$6.00<p class=food-details>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus excepturi porro.</p><input type=number value=1 min=1> <input type=submit value="Add To Cart"class=btn-primary></div></form></div><div class=food-menu-box><form action=""><div class=food-menu-img><img src=img/food/s1.webp alt=""class="img-responsive img-curve"></div><div class=food-menu-desc><h4>Aloo Paneer Sandwich</h4><p class=food-price>$8.00<p class=food-details>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus excepturi porro.</p><input type=number value=1 min=1> <input type=submit value="Add To Cart"class=btn-primary></div></form></div><div class=food-menu-box><form action=""><div class=food-menu-img><img src=img/food/b1.webp alt=""class="img-responsive img-curve"></div><div class=food-menu-desc><h4>Double Cheese Burger</h4><p class=food-price>$4.00<p class=food-details>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus excepturi porro.</p><input type=number value=1 min=1> <input type=submit value="Add To Cart"class=btn-primary></div></form></div><div class=food-menu-box><form action=""><div class=food-menu-img><img src=img/food/pasta.webp alt=""class="img-responsive img-curve"></div><div class=food-menu-desc><h4>Pasta</h4><p class=food-price>$8.00<p class=food-details>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus excepturi porro.</p><input type=number value=1 min=1> <input type=submit value="Add To Cart"class=btn-primary></div></form></div><div class=food-menu-box><form action=""><div class=food-menu-img><img src=img/food/rasgulla.webp alt=""class="img-responsive img-curve"></div><div class=food-menu-desc><h4>Indian Rasgulla</h4><p class=food-price>$1.00 Piece<p class=food-details>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus excepturi porro.</p><input type=number value=1 min=1> <input type=submit value="Add To Cart"class=btn-primary></div></form></div><div class=food-menu-box><form action=""><div class=food-menu-img><img src=img/food/paneer.webp alt=""class="img-responsive img-curve"></div><div class=food-menu-desc><h4>Kadai Paneer</h4><p class=food-price>$8.00<p class=food-details>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus excepturi porro.</p><input type=number value=1 min=1> <input type=submit value="Add To Cart"class=btn-primary></div></form></div></div></div><p class=text-center><a href=foods.html class=btn-primary>See All Foods</a></section><section class=testimonials><div class=container><h2 class=text-center>What Customers Say</h2><div class=heading-border></div><div class=testimonials-slider><div class=testimonial-item><div class=testimonial-content><div class=testimonial-text><i class="fa fa-quote-left"></i><p>The food delivery was prompt and the pizza was still hot when it arrived. Absolutely delicious and the online ordering process was simple and convenient. Will definitely order again!</div><div class=testimonial-info><div class=testimonial-img><img src=img/food/men-9405485_1280.webp alt=Customer></div><div class=testimonial-meta><h4>John Smith</h4><span>Regular Customer</span><div class=testimonial-rating><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i></div></div></div></div></div><div class=testimonial-item><div class=testimonial-content><div class=testimonial-text><i class="fa fa-quote-left"></i><p>I ordered their special burger and it was amazing! The quality of ingredients was top-notch and the portion size was generous. Customer service was excellent too. Highly recommended!</div><div class=testimonial-info><div class=testimonial-img><img src=img/food/girl-7543957_1280.webp alt=Customer></div><div class=testimonial-meta><h4>Sarah Johnson</h4><span>Food Enthusiast</span><div class=testimonial-rating><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-half-o"></i></div></div></div></div></div><div class=testimonial-item><div class=testimonial-content><div class=testimonial-text><i class="fa fa-quote-left"></i><p>I've tried many food delivery services, but this one stands out. Their sandwiches are fresh and tasty, and they always deliver on time. The app is also very user-friendly. Five stars!</div><div class=testimonial-info><div class=testimonial-img><img src=img/food/men1.webp alt=Customer></div><div class=testimonial-meta><h4>Michael Rodriguez</h4><span>Loyal Customer</span><div class=testimonial-rating><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i></div></div></div></div></div></div></div></section><section class=footer><div class=container><div class=grid-3><div class=text-center><h3>About Us</h3><br><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat officia, temporibus expedita dicta eligendi harum architecto fugiat sint, laudantium omnis animi. Voluptas praesentium maiores minima pariatur necessitatibus consequuntur, similique assumenda.</div><div class=texr-center><h3>Site Map</h3><br><div class=site-links><a href=categories.html>Categories</a> <a href=foods.html>Foods</a> <a href=order.html>Order</a> <a href=contact.html>Contact</a> <a href=login.html>Login</a> <a href=register.html>Register</a></div></div><div class=social-links><h3>Social Links</h3><br><div class=social><ul><li><a href=#><img src=https://img.icons8.com/color/48/null/facebook-new.png></a><li><a href=#><img src=https://img.icons8.com/fluency/48/null/instagram-new.png  width="48" height="48" loading="lazy"></a><li><a href=#><img src=https://img.icons8.com/color/48/null/twitter--v1.png  width="48" height="48" loading="lazy"></a><li><a href=#><img src=https://img.icons8.com/color/48/null/linkedin-circled--v1.png  width="48" height="48" loading="lazy"></a><li><a href=#><img src=https://img.icons8.com/color/48/null/youtube-play.png  width="48" height="48" loading="lazy"></a></ul></div></div></div></div></section><section class=copyright><div class="container text-center"><p>All rights reserved. Design By <a href=#>Gaurav Singh</a></div><a class=btn-primary id=back-to-top><i class="fa fa-angle-double-up"></i></a></section>
+<div id="offline-indicator">
+  <div class="offline-header">
+    <div class="offline-icon"><i class="fa fa-wifi"></i></div>
+    <div class="offline-title">You are offline</div>
+  </div>
+  <div class="offline-message">Some features like login, registration and ordering are unavailable in offline mode.</div>
+  <button class="offline-button" onclick="window.location.href='offline.html'">View Offline Details</button>
+</div>
+<script src=https://code.jquery.com/jquery-3.6.0.min.js></script><script src=https://code.jquery.com/ui/1.13.0/jquery-ui.js></script><script src=js/custom.js></script><script src=js/cart.js></script><script>
+  // Register service worker
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/js/sw.js')
+        .then(registration => {
+          console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        })
+        .catch(error => {
+          console.log('ServiceWorker registration failed: ', error);
+        });
+    });
+  }
+  
+  // Network status monitoring
+  function updateOnlineStatus() {
+    const indicator = document.getElementById('offline-indicator');
+    const body = document.body;
+    
+    if (!navigator.onLine) {
+      indicator.style.display = 'block';
+      body.classList.add('offline-mode');
+      
+      // Disable form submissions in offline mode
+      document.querySelectorAll('form').forEach(form => {
+        form.addEventListener('submit', function(e) {
+          if (!navigator.onLine) {
+            e.preventDefault();
+            alert('This feature is not available in offline mode.');
+          }
+        });
+      });
+      
+      // Disable restricted links in offline mode
+      document.querySelectorAll('.login-link, .register-link').forEach(link => {
+        link.addEventListener('click', function(e) {
+          if (!navigator.onLine) {
+            e.preventDefault();
+            alert('Login and registration are unavailable while offline. Please reconnect to the internet.');
+          }
+        });
+      });
+      
+    } else {
+      indicator.style.display = 'none';
+      body.classList.remove('offline-mode');
+    }
+  }
+
+  window.addEventListener('online', updateOnlineStatus);
+  window.addEventListener('offline', updateOnlineStatus);
+  
+  // Initial check
+  updateOnlineStatus();
+</script>
